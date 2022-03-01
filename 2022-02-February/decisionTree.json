@@ -1,0 +1,52 @@
+{
+  "hairColor: Black": {
+    "wearingGlasses: true": {
+      "wearingHat: true": [],
+      "wearingHat: false": []
+    },
+    "wearingGlasses: false": {
+      "wearingHat: true": [],
+      "wearingHat: false": []
+    }
+  },
+  "hairColor: Blond": {
+    "wearingGlasses: true": {
+      "wearingHat: true": [],
+      "wearingHat: false": []
+    },
+    "wearingGlasses: false": {
+      "wearingHat: true": [],
+      "wearingHat: false": []
+    }
+  },
+  "hairColor: Brown": {
+    "wearingGlasses: true": {
+      "wearingHat: true": [],
+      "wearingHat: false": []
+    },
+    "wearingGlasses: false": {
+      "wearingHat: true": [],
+      "wearingHat: false": []
+    }
+  },
+  "hairColor: Red": {
+    "wearingGlasses: true": {
+      "wearingHat: true": [],
+      "wearingHat: false": []
+    },
+    "wearingGlasses: false": {
+      "wearingHat: true": [],
+      "wearingHat: false": []
+    }
+  },
+  "hairColor: White": {
+    "wearingGlasses: true": {
+      "wearingHat: true": [],
+      "wearingHat: false": []
+    },
+    "wearingGlasses: false": {
+      "wearingHat: true": [],
+      "wearingHat: false": []
+    }
+  }
+}

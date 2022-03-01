@@ -1,8 +1,12 @@
 const fs = require("fs");
-const input = fs.readFileSync("guessWhoCharacters.json").toString();
+const path = require("path");
+
+const input = fs
+  .readFileSync(path.join(__dirname, "guessWhoCharacters.json"))
+  .toString();
 
 const characters = JSON.parse(input);
-const characterObject = characters.reduce(
+const characterMap = characters.reduce(
   (characters, { name, ...attributes }) => {
     characters[name] = { ...attributes };
     return characters;
@@ -27,17 +31,39 @@ const getCharacter = (name) =>
 //     }
 //     return differences;
 //   }, []);
+// const diffCharacters = (first, second) =>
+//   Object.keys(characterMap[first]).reduce(
+//     (differences, attribute) =>
+//       characterMap[first][attribute] !== characterMap[second][attribute]
+//         ? [...differences, attribute]
+//         : differences,
+//     []
+//   );
+
 const diffCharacters = (first, second) =>
-  Object.keys(characterObject[first]).reduce(
+  Object.keys(first).reduce(
     (differences, attribute) =>
-      characterObject[first][attribute] !== characterObject[second][attribute]
+      first[attribute] !== second[attribute] && attribute !== "name"
         ? [...differences, attribute]
         : differences,
     []
   );
 
-console.log(diffCharacters("Tom", "Susan"));
-
 // Tom + Susan => ["hairColor", "wearingGlasses"]
 
 // [Hard] Use the function from the previous exercise to compare each character to every other character
+
+const upperTriangle = (array) =>
+  array.flatMap((first, index) =>
+    array.slice(index + 1).map((second) => [first, second])
+  );
+const characterDiffs = upperTriangle(characters).map(([first, second]) => ({
+  characters: [first.name, second.name],
+  diff: diffCharacters(first, second),
+}));
+
+module.exports = {
+  blondCharacters,
+  diffCharacters,
+  characterDiffs,
+};
