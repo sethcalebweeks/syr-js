@@ -1,0 +1,198 @@
+{
+  "hairColor: Black": {
+    "wearingGlasses: false": {
+      "wearingHat: false": [
+        {
+          "name": "Alex",
+          "hairColor": "Black",
+          "wearingHat": false,
+          "wearingGlasses": false
+        },
+        {
+          "name": "Anne",
+          "hairColor": "Black",
+          "wearingHat": false,
+          "wearingGlasses": false
+        },
+        {
+          "name": "Max",
+          "hairColor": "Black",
+          "wearingHat": false,
+          "wearingGlasses": false
+        },
+        {
+          "name": "Philip",
+          "hairColor": "Black",
+          "wearingHat": false,
+          "wearingGlasses": false
+        }
+      ]
+    },
+    "wearingGlasses: true": {
+      "wearingHat: false": [
+        {
+          "name": "Tom",
+          "hairColor": "Black",
+          "wearingHat": false,
+          "wearingGlasses": true
+        }
+      ]
+    }
+  },
+  "hairColor: Red": {
+    "wearingGlasses: false": {
+      "wearingHat: false": [
+        {
+          "name": "Alfred",
+          "hairColor": "Red",
+          "wearingHat": false,
+          "wearingGlasses": false
+        },
+        {
+          "name": "Bill",
+          "hairColor": "Red",
+          "wearingHat": false,
+          "wearingGlasses": false
+        },
+        {
+          "name": "Frank",
+          "hairColor": "Red",
+          "wearingHat": false,
+          "wearingGlasses": false
+        },
+        {
+          "name": "Herman",
+          "hairColor": "Red",
+          "wearingHat": false,
+          "wearingGlasses": false
+        }
+      ]
+    },
+    "wearingGlasses: true": {
+      "wearingHat: true": [
+        {
+          "name": "Claire",
+          "hairColor": "Red",
+          "wearingHat": true,
+          "wearingGlasses": true
+        }
+      ]
+    }
+  },
+  "hairColor: Blond": {
+    "wearingGlasses: false": {
+      "wearingHat: false": [
+        {
+          "name": "Anita",
+          "hairColor": "Blond",
+          "wearingHat": false,
+          "wearingGlasses": false
+        },
+        {
+          "name": "Charles",
+          "hairColor": "Blond",
+          "wearingHat": false,
+          "wearingGlasses": false
+        },
+        {
+          "name": "David",
+          "hairColor": "Blond",
+          "wearingHat": false,
+          "wearingGlasses": false
+        }
+      ],
+      "wearingHat: true": [
+        {
+          "name": "Eric",
+          "hairColor": "Blond",
+          "wearingHat": true,
+          "wearingGlasses": false
+        }
+      ]
+    },
+    "wearingGlasses: true": {
+      "wearingHat: false": [
+        {
+          "name": "Joe",
+          "hairColor": "Blond",
+          "wearingHat": false,
+          "wearingGlasses": true
+        }
+      ]
+    }
+  },
+  "hairColor: Brown": {
+    "wearingGlasses: false": {
+      "wearingHat: true": [
+        {
+          "name": "Bernard",
+          "hairColor": "Brown",
+          "wearingHat": true,
+          "wearingGlasses": false
+        },
+        {
+          "name": "Maria",
+          "hairColor": "Brown",
+          "wearingHat": true,
+          "wearingGlasses": false
+        }
+      ],
+      "wearingHat: false": [
+        {
+          "name": "Richard",
+          "hairColor": "Brown",
+          "wearingHat": false,
+          "wearingGlasses": false
+        },
+        {
+          "name": "Robert",
+          "hairColor": "Brown",
+          "wearingHat": false,
+          "wearingGlasses": false
+        }
+      ]
+    }
+  },
+  "hairColor: White": {
+    "wearingGlasses: false": {
+      "wearingHat: true": [
+        {
+          "name": "George",
+          "hairColor": "White",
+          "wearingHat": true,
+          "wearingGlasses": false
+        }
+      ],
+      "wearingHat: false": [
+        {
+          "name": "Peter",
+          "hairColor": "White",
+          "wearingHat": false,
+          "wearingGlasses": false
+        },
+        {
+          "name": "Susan",
+          "hairColor": "White",
+          "wearingHat": false,
+          "wearingGlasses": false
+        }
+      ]
+    },
+    "wearingGlasses: true": {
+      "wearingHat: false": [
+        {
+          "name": "Paul",
+          "hairColor": "White",
+          "wearingHat": false,
+          "wearingGlasses": true
+        },
+        {
+          "name": "Sam",
+          "hairColor": "White",
+          "wearingHat": false,
+          "wearingGlasses": true
+        }
+      ]
+    }
+  }
+}
