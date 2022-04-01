@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const deepmerge = require("deepmerge");
 
 const guessWhoCharactersString = fs
   .readFileSync(path.join(__dirname, "guessWhoCharacters.json"))
@@ -18,8 +19,6 @@ const similarCharacters = characterDiffs
   .filter(({ diff }) => diff.length == 1)
   .map(({ characters }) => characters);
 
-console.log(similarCharacters);
-
 // [Medium] Write a function that takes two characters and produces an object
 // of shared attributes. (eg. combine("Tom", "Susan") = { wearingHat: true })
 const getCharacter = (name) =>
@@ -36,36 +35,23 @@ const combine = (first, second) =>
 // first split by hair color, then whether they are wearing glasses, then
 // whether they are wearing a hat. The template for the expected final result
 // can be found in decisionTree.json.
+const createBranch = (path, item) => {
+  const branch = {};
+  path.reduce((branch, key, i) => {
+    const endOfPath = i == path.length - 1;
+    branch[key] = endOfPath ? [item] : {};
+    return branch[key];
+  }, branch);
+  return branch;
+};
+
+const attributes = ["hairColor", "wearingGlasses", "wearingHat"];
 const decisionTree = guessWhoCharacters.reduce((tree, character) => {
-  const hairColorKey = `hairColor: ${character.hairColor}`;
-  const wearingGlassesKey = `wearingGlasses: ${character.wearingGlasses}`;
-  const wearingHatKey = `wearingHat: ${character.wearingHat}`;
-  if (!(hairColorKey in tree)) {
-    tree[hairColorKey] = {
-      [wearingGlassesKey]: {
-        [wearingHatKey]: [],
-      },
-    };
-  }
-  if (!(wearingGlassesKey in tree[hairColorKey])) {
-    tree[hairColorKey][wearingGlassesKey] = {
-      [wearingHatKey]: [],
-    };
-  }
-  if (!(wearingHatKey in tree[hairColorKey][wearingGlassesKey])) {
-    tree[hairColorKey][wearingGlassesKey][wearingHatKey] = [];
-  }
-
-  const similar = tree[hairColorKey][wearingGlassesKey][wearingHatKey];
-
-  tree[hairColorKey][wearingGlassesKey][wearingHatKey] = [...similar];
-  return tree;
+  const key = (attribute) => `${attribute}: ${character[attribute]}`;
+  const path = attributes.map(key);
+  const branch = createBranch(path, character.name);
+  return deepmerge(tree, branch);
 }, {});
-
-fs.writeFileSync(
-  path.join(__dirname, "decisionTree_out.json"),
-  JSON.stringify(decisionTree)
-);
 
 module.exports = {
   similarCharacters,
