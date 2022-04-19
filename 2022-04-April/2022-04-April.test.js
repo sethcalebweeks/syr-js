@@ -2,7 +2,7 @@ const {
   uniqueDigits,
   sudokuRowChecker,
   sudokuChecker,
-} = require("./2022-02-March");
+} = require("./2022-04-April");
 
 const validRow = [3, 2, 1, 6, 5, 4, 9, 8, 7];
 const invalidRow = [3, 2, 1, 6, 5, 4, 9, 8, 1];

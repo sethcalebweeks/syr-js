@@ -1,0 +1,28 @@
+{
+  "wearingGlasses: false": {
+    "hairColor: Black": {
+      "wearingHat: false": ["Alex", "Anne", "Max", "Philip"]
+    },
+    "hairColor: Red": {
+      "wearingHat: false": ["Alfred", "Bill", "Frank", "Herman"]
+    },
+    "hairColor: Blond": {
+      "wearingHat: false": ["Anita", "Charles", "David"],
+      "wearingHat: true": ["Eric"]
+    },
+    "hairColor: Brown": {
+      "wearingHat: true": ["Bernard", "Maria"],
+      "wearingHat: false": ["Richard", "Robert"]
+    },
+    "hairColor: White": {
+      "wearingHat: true": ["George"],
+      "wearingHat: false": ["Peter", "Susan"]
+    }
+  },
+  "wearingGlasses: true": {
+    "hairColor: Red": { "wearingHat: true": ["Claire"] },
+    "hairColor: Blond": { "wearingHat: false": ["Joe"] },
+    "hairColor: White": { "wearingHat: false": ["Paul", "Sam"] },
+    "hairColor: Black": { "wearingHat: false": ["Tom"] }
+  }
+}
