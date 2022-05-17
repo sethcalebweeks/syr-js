@@ -39,4 +39,6 @@ module.exports = {
   uniqueDigits,
   sudokuRowChecker,
   sudokuChecker,
+  columns,
+  squares,
 };
