@@ -21,7 +21,7 @@ const printBoard = (board) => {
    7 | 8 | 9 
      |   |   
   `;
-  filledBoard = board.reduce((filledBoard, player, index) => {
+  const filledBoard = board.reduce((filledBoard, player, index) => {
     const position = index + 1;
     return filledBoard.replace(position, player);
   }, emptyBoard);

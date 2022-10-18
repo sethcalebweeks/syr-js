@@ -1,4 +1,4 @@
-import { printBoard, play, winner } from "../2022-07-July/2022-07-July";
+const { printBoard, play, winner } = require("../2022-07-July/2022-07-July");
 // A tic tak toe board can be defined by the following visual:
 //  1 | 2 | 3       O | X | X
 // ___|___|___     ___|___|___
@@ -13,8 +13,18 @@ import { printBoard, play, winner } from "../2022-07-July/2022-07-July";
 
 // [Easy] Write a function that takes an array of 9 characters and returns a
 // comma separated string of the remaining available positions to play in. If
-// all positions are open, return "0-9".
-const availablePlays = (board) => {};
+// all positions are open, return "1-9".
+const availablePlays = (board) => {
+  const openPositions = board.filter(
+    (position) => !(position === "X" || position === "O")
+  );
+  switch (openPositions.length) {
+    case 9:
+      return "1-9";
+    default:
+      return openPositions.join(", ");
+  }
+};
 
 // [Medium] Write a function that takes a game state and a position from 1-9
 // and returns a new game state. A game state is defined as the following:
@@ -27,7 +37,64 @@ const availablePlays = (board) => {};
 // set the status to "O Play" and vice versa. If the player makes an invalid
 // move, set the status to "X Replay" or "O Replay". If the game is complete,
 // set the status to "X Wins", "O Wins", or "Tie" as appropriate.
-const makeMove = ({ board, status }, position) => {};
+const whoseTurn = (status) => {
+  switch (status) {
+    case "X Play":
+    case "X Replay":
+      return "X";
+    case "O Play":
+    case "O Replay":
+      return "O";
+    default:
+      return false;
+  }
+};
+
+const getNewStatus = (board, status) => {
+  const won = winner(board);
+  switch (won) {
+    case "X":
+    case "O":
+      return `${won} Wins`;
+    case "Tie":
+      return "Tie Game";
+    default:
+      switch (whoseTurn(status)) {
+        case "X":
+          return "O Play";
+        case "O":
+          return "X Play";
+        default:
+          return status;
+      }
+  }
+};
+
+const makeMove = ({ board, status }, position) => {
+  const turn = whoseTurn(status);
+  switch (status) {
+    case "X Wins":
+    case "O Wins":
+    case "Tie Game":
+      return position === "y"
+        ? {
+            board: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+            status: "X Play",
+          }
+        : "Quit";
+    default:
+      if (![1, 2, 3, 4, 5, 6, 7, 8, 9].includes(position)) {
+        return { board, status: `${turn} Replay` };
+      }
+  }
+  const newBoard = turn ? play(board, turn, position) : board;
+  const newStatus = turn
+    ? JSON.stringify(newBoard) === JSON.stringify(board)
+      ? `${turn} Replay`
+      : getNewStatus(newBoard, status)
+    : status;
+  return { board: newBoard, status: newStatus };
+};
 
 // [Hard] Write a function that starts a game of tic tac toe in the console.
 // The game should go something like this:

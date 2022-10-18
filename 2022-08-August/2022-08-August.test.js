@@ -5,10 +5,14 @@ describe("[Easy]", () => {
     expect(availablePlays([1, 2, 3, 4, 5, 6, 7, 8, 9])).toEqual("1-9");
   });
   test("Return plays 1, 3, 5, 7, 9", () => {
-    expect(play([1, "X", 3, "O", 5, "X", 7, "O", 9])).toEqual("1, 3, 5, 7, 9");
+    expect(availablePlays([1, "X", 3, "O", 5, "X", 7, "O", 9])).toEqual(
+      "1, 3, 5, 7, 9"
+    );
   });
   test("Return plays 1, 2, 3, 5, 8", () => {
-    expect(play([1, 2, 3, "O", 5, "X", "O", 8, "X"])).toEqual("1, 2, 3, 5, 8");
+    expect(availablePlays([1, 2, 3, "O", 5, "X", "O", 8, "X"])).toEqual(
+      "1, 2, 3, 5, 8"
+    );
   });
 });
 
